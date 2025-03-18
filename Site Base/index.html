@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Léo Costa Developer</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Base Styles */
+        body {
+            background-color: #0a192f;
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Container */
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            z-index: 1;
+            background: rgba(10, 25, 47, 0.7);
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 600;
+            background: linear-gradient(45deg, #ffffff, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        h1:hover {
+            background: linear-gradient(45deg, #64faff, #00bcd4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transform: translateY(-3px);
+        }
+
+        h3, .card-title {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin: 0;
+            font-weight: 400;
+        }
+
+        p {
+            color: #ffffff;
+        }
+
+        /* Background Video */
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.8;
+            object-fit: cover;
+            filter: brightness(0.8) contrast(1.1);
+        }
+
+        /* Title Section */
+        .title {
+            margin-bottom: 1rem;
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 1rem;
+            max-width: 1200px;
+            width: 95%;
+        }
+
+        /* Card Styles */
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            text-decoration: none;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(100, 255, 218, 0.2);
+            border-color: #00bcd4;
+        }
+
+        .card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: all 0.4s ease;
+        }
+
+        .card:hover img {
+            transform: scale(1.1);
+            filter: brightness(1.1);
+        }
+
+        .card-content {
+            padding: 1rem;
+        }
+
+        .card:hover .card-content {
+            background: rgba(100, 255, 218, 0.1);
+        }
+
+        .card:hover .card-title {
+            transform: translateY(-5px);
+        }
+
+        /* Contact Section */
+        .contact {
+            margin-top: 3rem;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+
+        .contact a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .whatsapp-icon {
+            margin-right: 0.5rem;
+        }
+
+        /* Add footer styles */
+                .footer {
+                    width: 100%;
+                    padding: 1rem;
+                    margin-top: 2rem;
+                }
+
+                .footer img {
+                    max-width: 100%;
+                    height: auto;
+                    border-radius: 8px;
+                }
+                @media (max-width: 1200px) {
+            .cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h3, .card-title {
+                font-size: 1.2rem;
+            }
+
+            .container {
+                padding: 1rem;
+                height: auto;
+                min-height: 100vh;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+                width: 90%;
+            }
+
+            .card img {
+                height: 250px;
+            }
+
+            .contact {
+                margin-top: 2rem;
+                padding: 0.8rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .card img {
+                height: 200px;
+            }
+
+            .footer img {
+                width: 90%;
+            }
+        }
+    </style>
+          
+        </head>
+        <body>
+            <div class="container">
+                <video autoplay muted loop class="background-video">
+                    <source src="/codes.mp4" type="video/mp4">
+                </video>
+                <div class="title">
+                <h1>Leonardo Costa</h1>
+                <h3>Desenvolvedor Full Stack</h3>
+                </div>
+
+                <div class="cards-grid">
+                    <a href="https://leocostadeveloper.vercel.app/" target="_blank" class="card">
+                        <img src="/website.png" alt="Development Projects">
+                        <div class="card-content">
+                            <h3 class="card-title">Portfolio</h3>
+                            <p class="card-description">Check out my latest development projects and skills</p>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/leocostarj22" target="_blank" class="card">
+                        <img src="/github.png" alt="Creative Work">
+                        <div class="card-content">
+                            <h3 class="card-title">GitHub</h3>
+                            <p class="card-description">Explore my code repositories and contributions</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/leocostadeveloper/" target="_blank" class="card">
+                        <img src="/linkedin.png" alt="Analytics Dashboard">
+                        <div class="card-content">
+                            <h3 class="card-title">LinkedIn</h3>
+                            <p class="card-description">Connect with me professionally</p>
+                        </div>
+                    </a>
+
+                    <a href="https://www.zaask.pt/user/leocostadeveloper" target="_blank" class="card">
+                        <img src="/zaask.png" alt="E-commerce">
+                        <div class="card-content">
+                            <h3 class="card-title">Zaask</h3>
+                            <p class="card-description">View my freelance services and projects</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="contact">
+                    <a href="https://wa.me/351965773193" target="_blank" class="whatsapp-link">
+                        <i class="fab fa-whatsapp whatsapp-icon"></i>
+                        +351 965 773 193
+                    </a>
+                </div>
+
+                <footer class="footer">
+                    <a target="_blank" href="https://www.zaask.pt/user/leocostadeveloper">
+                        <img src="https://www.zaask.pt/widget?user=932314&widget=pro-findme" alt="Zaask Professional Profile" />
+                    </a>
+                </footer>
+            </div>
+</body>
+</html>
+
+       
